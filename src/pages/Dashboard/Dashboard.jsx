@@ -3,6 +3,7 @@ import logo from "../../assets/logo/logo.png";
 import logoUser from "../../assets/logo/users.jpg";
 import image from "../../assets/image/project.jpg";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Home,
   BookOpen,
@@ -75,7 +76,7 @@ const Dashboard = () => {
               transition={{ duration: 0.6, ease: "easeInOut" }}
               className="absolute right-5 top-3"
             >
-              <ChevronDown className="w-7 h-7 text-white" />
+              <Plus className="w-7 h-7 text-white" />
             </motion.div>
           </button>
 
@@ -104,7 +105,7 @@ const Dashboard = () => {
                 </button>
 
                 {/* Add Classes */}
-                <button
+                {/* <button
                   onClick={() => setActiveTab("Add Classes")}
                   className={`flex items-center gap-3 w-full px-11 py-4 text-left text-white transition-all 
                   ${
@@ -115,7 +116,15 @@ const Dashboard = () => {
                 >
                   <Plus className="w-6 h-6" />
                   <span className="text-[16px] font-bold">Add Classes</span>
-                </button>
+                </button> */}
+                <Link
+                  to="/addclasses"
+                  className={`flex items-center gap-3 w-full px-11 py-4 text-left text-white transition-all 
+                  ${activeTab === "Add Classes" ? "bg-[#214381]" : "hover:bg-[#214381]"}`}
+                >
+                  <Plus className="w-6 h-6" />
+                  <span className="text-[16px] font-bold">Add Classes</span>
+                </Link>
               </motion.div>
             )}
           </AnimatePresence>
@@ -134,8 +143,10 @@ const Dashboard = () => {
 
         {/* logout */}
         <div className="px-4 mt-64">
-          <button className="flex items-center text-lg font-bold absolute bottom-6 
-          justify-center gap-2 w-[90%] bg-[#DD2B3D] hover:bg-[#e13647] text-white py-1 rounded-md transition">
+          <button
+            className="flex items-center text-lg font-bold absolute bottom-6 
+          justify-center gap-2 w-[90%] bg-[#DD2B3D] hover:bg-[#e13647] text-white py-1 rounded-md transition"
+          >
             <LogOut className="w-5 h-5" />
             Logout
           </button>
@@ -144,9 +155,11 @@ const Dashboard = () => {
       {/* main content */}
       <div className="bg-white w-full h-screen">
         {/* text content */}
-        <h1 className="text-4xl text-[#0A2F70] font-bold px-3 my-4">About System</h1>
+        <h1 className="text-4xl text-[#0A2F70] font-bold px-3 my-4">
+          About System
+        </h1>
         <div className="flex justify-center">
-        <hr color="" className="w-[98%]" />
+          <hr color="" className="w-[98%]" />
         </div>
         {/* card profile 1 */}
         <div className="w-full h-[90%]">
@@ -158,31 +171,43 @@ const Dashboard = () => {
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
-                <img className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg" src={image} alt="" />
+                <img
+                  className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
+                  src={image}
+                  alt=""
+                />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
                 [ Project-Manager ]
               </h3>
-              <h3 className="text-center text-[16px] px-2 ">General-Manager At ETEC</h3>
+              <h3 className="text-center text-[16px] px-2 ">
+                General-Manager At ETEC
+              </h3>
             </div>
           </div>
 
           {/* Card Member */}
           <div className="w-full h-1/2 flex justify-center gap-6">
-           <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
+            <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
                 NAT Sokphari
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
-                <img className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg" src={image} alt="" />
+                <img
+                  className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
+                  src={image}
+                  alt=""
+                />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
                 [ Project-Manager ]
               </h3>
-              <h3 className="text-center text-[16px] px-2 ">General-Manager At ETEC</h3>
+              <h3 className="text-center text-[16px] px-2 ">
+                General-Manager At ETEC
+              </h3>
             </div>
             <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
@@ -190,13 +215,19 @@ const Dashboard = () => {
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
-                <img className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg" src={image} alt="" />
+                <img
+                  className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
+                  src={image}
+                  alt=""
+                />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
                 [ Project-Manager ]
               </h3>
-              <h3 className="text-center text-[16px] px-2 ">General-Manager At ETEC</h3>
+              <h3 className="text-center text-[16px] px-2 ">
+                General-Manager At ETEC
+              </h3>
             </div>
             <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
@@ -204,15 +235,20 @@ const Dashboard = () => {
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
-                <img className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg" src={image} alt="" />
+                <img
+                  className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
+                  src={image}
+                  alt=""
+                />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
                 [ Project-Manager ]
               </h3>
-              <h3 className="text-center text-[16px] px-2 ">General-Manager At ETEC</h3>
+              <h3 className="text-center text-[16px] px-2 ">
+                General-Manager At ETEC
+              </h3>
             </div>
-            
           </div>
         </div>
       </div>
