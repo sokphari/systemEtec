@@ -91,7 +91,8 @@ const Dashboard = () => {
                 className="w-[85%] bg-[#214381] overflow-hidden"
               >
                 {/* View Classes */}
-                <button
+                <Link
+                to={"/viewclasses"}
                   onClick={() => setActiveTab("View Classes")}
                   className={`flex items-center gap-3 w-full px-10 py-4 text-left text-white transition-all 
                   ${
@@ -102,7 +103,7 @@ const Dashboard = () => {
                 >
                   <BookOpen className="w-6 h-6" />
                   <span className="text-[16px] font-bold">View Classes</span>
-                </button>
+                </Link>
 
                 {/* Add Classes */}
                 {/* <button

@@ -7,17 +7,21 @@ import {
   BookOpen,
   LogOut,
   User,
+  MoreVertical,
+  Airplay ,
+  UsersRound ,
 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../assets/logo/logo.png";
 import logoUser from "../../assets/logo/users.jpg";
 import image from "../../assets/image/project.jpg";
-const AddClasses = () => {
+const Viewclasses = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const ToggleSideBar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+  const [menuOpen, setMenuOpen] = useState(false);
   const ToggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
   const [activeTab, setActiveTab] = useState("Home");
@@ -27,7 +31,7 @@ const AddClasses = () => {
     startDate: "",
     description: "",
   });
-
+  const ToggleMenu = () => setMenuOpen(!menuOpen);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -64,8 +68,8 @@ const AddClasses = () => {
             className={`flex relative  items-center gap-3 hover:text-[#c5ccd2] w-[85%] px-4 py-2 rounded-md transition-all
                             ${
                               activeTab === "Home"
-                                ? "bg-[#214381] text-white"
-                                : "hover:bg-[#214381] text-white"
+                                ? "bg-[#214381]  text-white"
+                                : "hover:bg-[#214381] bg-[#214381] text-white"
                             } `}
           >
             <div className="gap-x-8 flex justify-center ">
@@ -110,8 +114,7 @@ const AddClasses = () => {
                 className="w-[85%] bg-[#214381] overflow-hidden"
               >
                 {/* View Classes */}
-                <Link
-                  to={"/viewclasses"}
+                <button
                   onClick={() => setActiveTab("View Classes")}
                   className={`flex items-center gap-3 w-full px-10 py-4 text-left text-white transition-all 
                   ${
@@ -122,7 +125,7 @@ const AddClasses = () => {
                 >
                   <BookOpen className="w-6 h-6" />
                   <span className="text-[16px] font-bold">View Classes</span>
-                </Link>
+                </button>
 
                 {/* Add Classes */}
                 {/* <button
@@ -181,126 +184,99 @@ const AddClasses = () => {
       </div>
 
       {/* Main Content */}
-      <div className="h-full w-[83.5%] px-3">
-        <h1 className="text-[40px] mt-[8px] font-semibold text-[#0A2F70]">
-          New classes
-        </h1>
-        <p className="text-[#0A2F70] font-medium">
-          This is a information well be shown in system!
-        </p>
-        <div div className="flex justify-center mt-6">
-          <hr color="" className="w-[99.5%]" />
-        </div>
-        {/* this form input information  */}
-        <div className="w-full h-[62%] mt-12 px-6">
-          <div className="w-full h-full bg-[#0A2F70] rounded-md border overflow-hidden">
-            <h1 className="text-3xl font-semibold text-white px-4 py-2">
-              Class-Information
-            </h1>
-            <div className="w-full h-full bg-white  ">
-              <form
-                onSubmit={handleSubmit}
-                className="mx-auto bg-white p-6 rounded-lg shadow-md"
-              >
-                <div className="w-full h-full flex justify-between">
-                <div className="mb-4">
-                  <label className="block font-serif text-2xl text-gray-700 mb-2">
-                    Building:
-                  </label>
-                  <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Building</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
+      <div className="h-full w-[83.5%]">
+        <div className=" w-full h-[20%] flex  justify-center items-center">
+          <div className="w-[97%] h-[90%] flex ps-15 items-center gap-25 mt-4 bg-[#E6EAF1] rounded-2xl">
+            <div className="w-[28%] border border-dashed h-[75%] gap-5 px-10 flex items-center bg-[#D0D7E4] ">
+                <div className="w-[65px] h-[65px] flex justify-center items-center rounded-[50%] bg-white">
+                    <Airplay className="w-10 h-10" />
                 </div>
-                <div className="mb-4">
-                  <label className="block font-serif text-2xl text-gray-700 mb-2">
-                    Room:
-                  </label>
-                   <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Room</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
+                <div className="w-[50%] h-[100%] pt-5 ">
+                    <h1 className="font-normal text-xl">All Classes</h1>
+                    <span className="text-xl font-medium">1</span>
                 </div>
-                <div className="mb-4">
-                  <label className="block font-serif text-gray-700 mb-2 text-2xl">
-                    Course:
-                  </label>
-                  <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Course</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
+            </div>
+            <div className="w-[28%] border border-dashed h-[75%] gap-5 px-10 flex items-center bg-[#D0D7E4] ">
+                <div className="w-[65px] h-[65px] flex justify-center items-center rounded-[50%] bg-white">
+                    <UsersRound className="w-10 h-10" />
                 </div>
+                <div className="w-[50%] h-[100%] pt-5 ">
+                    <h1 className="font-normal text-xl">All Students</h1>
+                    <span className="text-xl font-medium">15</span>
                 </div>
-                <div className="w-full h-full flex justify-between">
-                <div className="mb-4">
-                  <label className="block font-serif text-2xl text-gray-700 mb-2">
-                    Status:
-                  </label>
-                  <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Status</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
-                </div>
-                <div className="mb-4">
-                  <label className="block font-serif text-2xl text-gray-700 mb-2">
-                    Term:
-                  </label>
-                   <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Term</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
-                </div>
-                <div className="mb-4">
-                  <label className="block font-serif text-gray-700 mb-2 text-2xl">
-                    Time:
-                  </label>
-                  <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Time</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
-                </div>
-                </div>
-                <div className="w-full h-full flex justify-between">
-                <div className="mb-4">
-                  <label className="block font-serif text-2xl text-gray-700 mb-2">
-                    Building:
-                  </label>
-                  <select className="border text-2xl py-[9px] rounded-md w-[370px] px-2" name="" id="">
-                    <option value="Select Building">Select Building</option>
-                    <option value="ETECT1">ETECT1</option>
-                    <option value="ETECT2">ETECT2</option>
-                    <option value="ETECT3">ETECT3</option>
-                  </select>
-                </div>
-
-                </div>
-                <div className="w-full h-auto flex justify-end">
-                <button
-                  type="submit"
-                  className="bg-[#0A2F70] hover:bg-blue-900 text-white font-semibold text-xl w-[20%] py-3 px-4 rounded-md transition"
-                >
-                  Add This Class
-                </button>
-                </div>
-              </form>
             </div>
           </div>
+        </div>
+        <h1 className="text-3xl my-5 px-3 font-semibold text-[#0A2F70]">
+          In Progressing
+        </h1>
+        <div className="border-2 border-dashed border-[#214381] flex-col left-4 justify-center h-[510px] bg-[#E6EAF1] p-6 w-[400px] relative">
+          <div className="w-[350px] h-[410px] bg-amber-200 overflow-hidden rounded-xl">
+                <h3 className="text-3xl w-full px-2 font-bold text-[#0A2F70] bg-[#F2F2F2] py-2">
+                PHP/Laravel
+                </h3>
+                <ul className="text-[#0A2F70] text-2xl space-y-0">
+                <li className="py-3 px-2 bg-[#FFFFFF]">
+                    <span className="font-normal">Class-ID:</span> 628
+                </li>
+                <li className="bg-[#F2F2F2] py-3 px-2">
+                    <span className="font-normal">Chapter:</span> 1
+                </li>
+                <li className="py-3 px-2 bg-[#FFFFFF]">
+                    <span className="font-normal">Students:</span> 15
+                </li>
+                <li className="bg-[#F2F2F2] pt-2 h-[80px] px-2">
+                    <span className="font-normal">Time:</span> 18:00–19:15 (Mon–Thur)
+                </li>
+                <li className="py-3 px-2 bg-[#FFFFFF]">
+                    <span className="font-normal">Located:</span> ETEC 2 (E105)
+                </li>
+                <li className="bg-[#F2F2F2] py-3 px-2"> 
+                    <span className="font-normal">Status:</span> Physical (Normal)
+                </li>
+                </ul>
+          </div>
+                <div className="mt-3 flex justify-between items-center relative">
+                <button className="bg-[#0A2F70] hover:bg-[#214381] text-white px-24 py-2 rounded-md">
+                    View Students
+                </button>
+                <button
+                    onClick={ToggleMenu}
+                    className="bg-[#0A2F70] text-white px-3 py-2 rounded-md relative"
+                >
+                    <MoreVertical className="w-6 h-6" />
+                </button>
+
+                {/* Dropdown Menu */}
+                {menuOpen && (
+                    <div className="absolute right-0 top-12 bg-white border rounded-md shadow-lg w-40 z-50">
+                    <ul className="flex flex-col text-sm font-medium">
+                        <li className="px-4 py-2 hover:bg-[#E6EAF1] text-[#0A2F70] cursor-pointer">
+                        Transfer
+                        </li>
+                        <li className="px-4 py-2 hover:bg-[#E6EAF1] text-[#0A2F70] cursor-pointer">
+                        Update
+                        </li>
+                        <li className="px-4 py-2 hover:bg-[#E6EAF1] text-[#0A2F70] cursor-pointer">
+                        Add Students
+                        </li>
+                        <li className="px-4 py-2 hover:bg-[#E6EAF1] text-[#0A2F70] cursor-pointer">
+                        Add Collaps
+                        </li>
+                        <li className="px-4 py-2 bg-[#EAA70A] hover:bg-[#f2b83c] text-white cursor-pointer">
+                        Pre-End
+                        </li>
+                        <li className="px-4 py-2 bg-[#DD2B3D] hover:bg-[#e44b5b] text-white cursor-pointer">
+                        End
+                        </li>
+                    </ul>
+                    </div>
+                )}
+                </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default AddClasses;
+export default Viewclasses;
