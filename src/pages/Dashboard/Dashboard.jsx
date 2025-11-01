@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logo.png";
+import logotong from "../../assets/image/tong.jpg";
+import logovuthin from "../../assets/image/vuthin.jpg";
+import logorathanak from "../../assets/image/Rathanak.jpg";
 import logoUser from "../../assets/logo/users.jpg";
 import image from "../../assets/image/project.jpg";
 import { motion, AnimatePresence } from "framer-motion";
@@ -192,62 +195,62 @@ const Dashboard = () => {
           <div className="w-full h-1/2 flex justify-center gap-6">
             <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
-                NAT Sokphari
+                Tong
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
                 <img
                   className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
-                  src={image}
+                  src={logotong}
                   alt=""
                 />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
-                [ Project-Manager ]
+                [ Tester ]
               </h3>
               <h3 className="text-center text-[16px] px-2 ">
-                General-Manager At ETEC
+                Co-Manager at ETEC
               </h3>
             </div>
             <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
-                NAT Sokphari
+                Vuthin
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
                 <img
                   className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
-                  src={image}
+                  src={logovuthin}
                   alt=""
                 />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
-                [ Project-Manager ]
+                [ Full Stack ]
               </h3>
               <h3 className="text-center text-[16px] px-2 ">
-                General-Manager At ETEC
+                Web-Developer at Blue.coLTD
               </h3>
             </div>
             <div className="w-[15%] h-[90%] bg-[#0A2F70] text-white rounded-lg mt-6 overflow-hidden">
               <h3 className="text-center my-3 text-[16px] font-semibold">
-                NAT Sokphari
+                Rathanak
               </h3>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <div className="flex justify-center">
                 <img
                   className="w-[220px] h-[170px] px-0 object-contain py-3 rounded-lg"
-                  src={image}
+                  src={logorathanak}
                   alt=""
                 />
               </div>
               <div className="w-full h-[1px] bg-amber-50"></div>
               <h3 className="text-center text-[16px] mt-2 font-bold">
-                [ Project-Manager ]
+                [ Core-Developer ]
               </h3>
               <h3 className="text-center text-[16px] px-2 ">
-                General-Manager At ETEC
+                Web-Developer at ETEC
               </h3>
             </div>
           </div>
